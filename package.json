@@ -1,0 +1,13 @@
+{
+  "name": "programador-attiny-webflasher",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web flasher (WebSerial) para grabar ATtiny85 vía Nano/ArduinoISP",
+  "scripts": {
+    "test:hw": "node test/node-flash.mjs"
+  },
+  "dependencies": {
+    "serialport": "^13.0.0"
+  }
+}

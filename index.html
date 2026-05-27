@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grabador ATtiny85 / ATmega328P</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      max-width: 640px; margin: 0 auto; padding: 24px; line-height: 1.5;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: .25rem; }
+    .sub { color: #888; margin-top: 0; }
+    .card { border: 1px solid #8884; border-radius: 12px; padding: 16px; margin: 16px 0; }
+    fieldset { border: 1px solid #8884; border-radius: 10px; }
+    label.fw { display: block; padding: 6px 0; cursor: pointer; }
+    label.fw small { color: #888; }
+    button#flashBtn {
+      width: 100%; padding: 16px; font-size: 1.15rem; font-weight: 600;
+      border: 0; border-radius: 12px; background: #2563eb; color: #fff; cursor: pointer;
+    }
+    button#flashBtn:disabled { background: #888; cursor: default; }
+    .progress { height: 22px; background: #8882; border-radius: 6px; overflow: hidden; margin: 14px 0; }
+    #bar { height: 100%; width: 0; background: #16a34a; color: #fff; font-size: .8rem;
+           text-align: center; line-height: 22px; transition: width .15s; }
+    #log {
+      font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85rem;
+      background: #0001; border-radius: 8px; padding: 10px; height: 200px; overflow: auto;
+      white-space: pre-wrap;
+    }
+    #log .ok  { color: #16a34a; }
+    #log .err { color: #dc2626; font-weight: 600; }
+    .steps { font-size: .9rem; color: #666; }
+    .warn { background: #f59e0b22; border: 1px solid #f59e0b88; border-radius: 8px;
+            padding: 10px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>🔧 Grabador de chips</h1>
+  <p class="sub">Graba el chip directamente desde el navegador. No hay que instalar nada.</p>
+
+  <div class="warn">
+    Necesitas <b>Google Chrome</b> o <b>Microsoft Edge</b> en un ordenador (no funciona en móvil ni en Firefox/Safari).
+  </div>
+
+  <div class="card">
+    <ol class="steps">
+      <li>Conecta la placa programadora por <b>USB</b>.</li>
+      <li>Coloca <b>un solo chip</b> en su zócalo (las líneas SPI son compartidas).</li>
+      <li>Elige el chip y qué grabar, y pulsa el botón. Cuando aparezca el diálogo, elige el puerto del Arduino.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <fieldset>
+      <legend>¿Qué chip vas a grabar?</legend>
+      <div id="chipList"></div>
+    </fieldset>
+  </div>
+
+  <div class="card">
+    <fieldset>
+      <legend>¿Qué quieres grabar?</legend>
+      <div id="fwList"></div>
+    </fieldset>
+  </div>
+
+  <button id="flashBtn">🔌 Conectar y grabar</button>
+
+  <div class="progress"><div id="bar"></div></div>
+  <div id="log"></div>
+
+  <p class="sub" style="font-size:.8rem" id="clockNote">
+    Si falla, desconecta y vuelve a conectar la placa, y reintenta.
+  </p>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
