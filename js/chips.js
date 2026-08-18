@@ -33,6 +33,7 @@ export const CHIPS = {
       { file: "dftest.hex",  label: "Test DFPlayer",   desc: "sin botones: reproduce la pista 1 cada 4 s para probar la comunicación con el DFPlayer" },
       { file: "btntest1.hex",label: "Test botones",    desc: "cualquier botón reproduce SIEMPRE la pista 1: separa fallo de botón/ADC del de la tarjeta SD" },
       { file: "sampler.hex", label: "Sampler",         desc: "firmware del reproductor (botonera + DFPlayer)" },
+      { file: "sampler_LGA-Dub_pausa.hex", label: "Sampler Dub (pausa)", desc: "variante de prueba del sampler con pausa" },
     ],
   },
 
