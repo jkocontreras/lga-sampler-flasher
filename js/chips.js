@@ -34,6 +34,7 @@ export const CHIPS = {
       { file: "btntest1.hex",label: "Test botones",    desc: "cualquier botón reproduce SIEMPRE la pista 1: separa fallo de botón/ADC del de la tarjeta SD" },
       { file: "sampler.hex", label: "Sampler",         desc: "firmware del reproductor (botonera + DFPlayer)" },
       { file: "sampler_LGA-Dub_pausa.hex", label: "Sampler Dub (pausa)", desc: "variante de prueba del sampler con pausa" },
+      { file: "sampler_LGA-Dub_pausa_arranque.hex", label: "Sampler Dub (pausa, arranque lento)", desc: "igual que el anterior, pero espera más al encender para que el DFPlayer termine de leer la SD" },
     ],
   },
 
