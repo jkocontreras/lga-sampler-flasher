@@ -3,8 +3,7 @@
 Graba un **ATtiny85** o un **ATmega328P** desde el navegador, con un clic, sin instalar nada.
 Usa la placa programadora (Arduino Nano con **ArduinoISP**) y la **Web Serial API**.
 
-👉 **Página:** https://oficinadesonido.github.io/lga-sampler-flasher/
-
+👉 **Página:** https://jkocontreras.github.io/lga-sampler-flasher/
 ## Cómo se usa
 
 1. Abre la página en **Chrome** o **Edge** de escritorio (Web Serial no existe en móvil ni en Firefox/Safari).
